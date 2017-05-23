@@ -8,7 +8,7 @@ namespace LAN.Core.Logging.Tests
 		[Explicit]
 		public void TestThreeSimpleLogs()
 		{
-			var fileLogger = new FileLogger();
+			var fileLogger = new FileLogger("FileLoggerTest.log");
 			var errorLog = new Log(new[] { fileLogger }, AsIsOrderer.Instance, LogEverythingFilter.Instance, LogLevels.Error);
 			errorLog.AddLogSection("Error field", "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 			var warnLog = new Log(new[] { fileLogger }, AsIsOrderer.Instance, LogEverythingFilter.Instance, LogLevels.Warn);
