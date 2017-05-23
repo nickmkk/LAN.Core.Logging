@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Nicholas J. Markkula</authors>
+    <owners>Nicholas J. Markkula</owners>
+    <licenseUrl>https://raw.githubusercontent.com/nickmkk/LAN.Core.Logging/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/nickmkk/LAN.Core.Logging/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Extendable Logging Abstraction</description>
+    <copyright>Copyright 2017</copyright>
+    <tags>Logging Log</tags>
+  </metadata>
+</package>
