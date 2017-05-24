@@ -25,14 +25,7 @@ You can use the provided WithMessage and WithException extensions.
       .withException(ex)
       .Write();
 ```
-Or you can create your own logging sections if the provided extensions don't meet your needs.
-```c#
-  _logFactory.Error()
-    .AddLogSection(MyLogSectionNames.Message, "An error occurred")
-    .AddLogSection(MyLogSectionNames.Exception, ex.ToString())
-    .Write();
-```
-Here is an example of a custom log extension that you might add
+Or you can create your own logging sections if the provided extensions don't meet your needs.  Here is an example of a custom log extension that you might add.
 ```c#
   public static class LogExtensions
   {  
