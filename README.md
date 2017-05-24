@@ -28,19 +28,17 @@ You can use the provided WithMessage and WithException extensions.
 Or you can create your own logging sections if the provided extensions don't meet your needs.
 ```c#
   _logFactory.Error()
-    .AddLogSection("message", "An error occurred")
-    .AddLogSection("exception", ex.ToString())
+    .AddLogSection(MyLogSectionNames.Message, "An error occurred")
+    .AddLogSection(MyLogSectionNames.Exception, ex.ToString())
     .Write();
 ```
 Here is an example of a custom log extension that you might add
 ```c#
   public static class LogExtensions
   {  
-    public static ILog Verbose(this ILog log, string message, Exception ex)
+    public static ILog WithCustomer(this ILog log, string customerName, Exception ex)
     {
-      var sectionName = "verboselog";
-      var sectionContent = message + ": " + ex.ToString();
-      log.AddLogSection(sectionName, sectionContent);
+      log.AddLogSection(MyLogSectionNames.Customer, customerName);
       return log;
     }
   }
@@ -48,7 +46,7 @@ Here is an example of a custom log extension that you might add
 Which would be used like this
 ```c#
   _logFactory.Error()
-    .Verbose("An error occurred", ex)
+    .WithCustomer(customer.name)
     .Write();
 ```
 
